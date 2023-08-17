@@ -5,13 +5,25 @@ This repository delves into the realm of uncertainty quantification within the c
 
 ## Table of Contents
 1. Introduction
-2. Preliminaries
-3. Infrastructure
-4. Modules
-5. Results
+2. Implementation
+3. Preliminaries
+4. Infrastructure
+5. Modules
+6. Results
 
 ## Introduction
 LLMs, or Large Language Models, are trained on vast volumes of text data, enabling them to generate human-like text based on input. NLG, or Natural Language Generation, is the process of creating human-like language using computers. This project aims to bridge the gap between understanding how to trust models and determining how uncertain or confident these models are in their responses.
+
+## Implementation
+
+The step-by-step implementation of the project is as follows:
+  1. Download the CoQA dataset and convert it into Huggingface Dataset format using the **coqa_setup.ipynb**
+  2. Use the **generate_response.ipynb** notebook to generate the responses for the pre-trained LLM that is to be studied. Tha parameters and the choice of the models can be set at the very beginning of every notebook under the model **param**'s parameter
+  3. To clean the responses received, use the **cleaner.ipynb** notebooks
+  4. Utilize the cleaned generated responses to get the similarity scores using the **generate_similarities_for_model.ipynb** notebook
+  5. Also utilize the cleaned generated responses to get the AUROC score and get the uncertainty using the **generate_uncertainity.ipynb** notebook
+  6. Utilize the cleaned generated responses and their respective similarities score using the **generate_log_liklihood.ipynb** notebook
+  7. Finally, use the **generate_confidence.ipynb** and **results.ipynb** notebooks to get the accuracy and score for the model
 
 ## Preliminaries
 - Uncertainty Vs Confidence
